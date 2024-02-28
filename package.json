@@ -1,0 +1,48 @@
+{
+  "name": "nnrgbtp",
+  "version": "1.0.0",
+  "description": "A simple CAP project.",
+  "repository": {
+    "type": "git",
+    "url": "<Add your repository here>"
+  },
+  "license": "UNLICENSED",
+  "private": true,
+  "dependencies": {
+    "@sap/cds": "^7",
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "@cap-js/sqlite": "^1",
+    "@sap/ux-specification": "^1.120.4"
+  },
+  "scripts": {
+    "start": "cds-serve",
+    "watch-businesspartner": "cds watch --open businesspartner/webapp/index.html?sap-ui-xx-viewCache=false",
+    "watch-stock": "cds watch --open stock/webapp/index.html?sap-ui-xx-viewCache=false",
+    "watch-purchase": "cds watch --open purchase/webapp/index.html?sap-ui-xx-viewCache=false",
+    "watch-sales": "cds watch --open sales/webapp/index.html?sap-ui-xx-viewCache=false"
+  },
+  "cds": {
+    "fiori": {
+      "lean_draft": true,
+      "bypass_draft": true
+    },
+    "requires": {
+      "db": {
+        "kind": "sqlite",
+        "credentials": {
+          "url": "db.sqlite"
+        }
+      }
+    }
+  },
+  "main": "index.js",
+  "author": "",
+  "sapux": [
+    "app/businesspartner",
+    "app/stock",
+    "app/purchase",
+    "app/sales"
+  ]
+}
